@@ -1,1 +1,27 @@
-<p>user-item works!</p>
+<div class="card mb-3">
+  <div class="row">
+    <div class="col-sm-3">
+      <img
+        [src]="user.imageUrl"
+        class="card-img-top user-image image-responsive"
+        alt="{{ user.name }}"
+      />
+    </div>
+    <div class="col-sm-9">
+      <div class="card-body">
+        <p class="card-title"><strong>Name: </strong>{{ user.name }}</p>
+        <p class="card-text">
+          <strong>Login: </strong>
+          {{ user.login }}
+        </p>
+        <button
+          type="button"
+          class="btn btn-link pl-0"
+          (click)="onShowDetails()"
+        >
+          Details
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

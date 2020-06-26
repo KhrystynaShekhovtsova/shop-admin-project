@@ -1,1 +1,9 @@
-<p>user-list works!</p>
+<section class="user-list">
+  <h1>Users</h1>
+  <hr />
+  <app-user-item
+    *ngFor="let userElement of users"
+    [user]="userElement"
+    (showDetails)="onShowUserDetails(userElement)"
+  ></app-user-item>
+</section>

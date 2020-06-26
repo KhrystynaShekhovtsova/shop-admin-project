@@ -1,0 +1,38 @@
+@import "../../styles/abstracts/variables";
+@import "../../styles/base/animations";
+
+.icon {
+  font-size: 24px;
+}
+
+.dropdown {
+  transition: all 0.5s;
+  .dropdown-menu {
+    &.animated {
+      animation-duration: 0.5s;
+      -webkit-animation-duration: 0.5s;
+      animation-fill-mode: both;
+      -webkit-animation-fill-mode: both;
+    }
+    a {
+      color: $dark;
+    }
+  }
+  &:hover {
+    .dropdown-menu {
+      display: block;
+      &.animated {
+        animation-name: slideIn;
+      }
+    }
+  }
+}
+
+.user-photo {
+  max-width: 30px;
+  filter: drop-shadow(1px 2px 3px rgba(#222, 45%));
+}
+
+.name {
+  text-transform: capitalize;
+}

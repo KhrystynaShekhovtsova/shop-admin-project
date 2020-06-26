@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { User } from '../../user.model';
 
 @Component({
   selector: 'app-user-item',
   templateUrl: './user-item.component.html',
-  styleUrls: ['./user-item.component.scss']
+  styleUrls: ['./user-item.component.scss'],
 })
 export class UserItemComponent implements OnInit {
+  @Input() user: User;
+  @Output() showDetails = new EventEmitter<void>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  onShowDetails(): void {
+    console.log('clicked!');
+    this.showDetails.emit();
   }
-
 }
