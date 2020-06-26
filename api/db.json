@@ -1,0 +1,122 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": {
+        "title": "Ms",
+        "first": "Valerie",
+        "last": "Chavez"
+      },
+      "location": {
+        "street": {
+          "number": 6828,
+          "name": "James St"
+        },
+        "city": "Billings",
+        "state": "Georgia",
+        "country": "United States",
+        "postcode": 33403,
+        "coordinates": {
+          "latitude": "89.8823",
+          "longitude": "140.6983"
+        },
+        "timezone": {
+          "offset": "+8:00",
+          "description": "Beijing, Perth, Singapore, Hong Kong"
+        }
+      },
+      "email": "valerie.chavez@example.com",
+      "login": {
+        "uuid": "f2cda612-4ac7-43db-b938-eb33b191a952",
+        "username": "orangetiger727",
+        "password": "celtics",
+        "salt": "OXCo1QRJ",
+        "md5": "4615457a75d0953a202ea46d7c1f0583",
+        "sha1": "dcf8223116b23579a03d54a09006fb1414d69d14",
+        "sha256": "87d51b89b84eb1c2d174fc48e3d8cb60c19dca8354ba393b1c6fd1f49e594d05"
+      },
+      "dob": {
+        "date": "1954-11-28T15:22:37.154Z",
+        "age": 66
+      },
+      "registered": {
+        "date": "2005-11-15T23:22:42.041Z",
+        "age": 15
+      },
+      "phone": "(150)-653-1767",
+      "cell": "(171)-963-4128",
+      "id": {
+        "name": "SSN",
+        "value": "520-40-5974"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/68.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/68.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/68.jpg"
+      },
+      "nat": "US"
+    },
+    {
+      "gender": "female",
+      "name": {
+        "title": "Mrs",
+        "first": "Marina",
+        "last": "Delgado"
+      },
+      "location": {
+        "street": {
+          "number": 7425,
+          "name": "Paseo de Extremadura"
+        },
+        "city": "San Sebastián de Los Reyes",
+        "state": "Castilla la Mancha",
+        "country": "Spain",
+        "postcode": 76926,
+        "coordinates": {
+          "latitude": "-25.5722",
+          "longitude": "87.5395"
+        },
+        "timezone": {
+          "offset": "+9:30",
+          "description": "Adelaide, Darwin"
+        }
+      },
+      "email": "marina.delgado@example.com",
+      "login": {
+        "uuid": "a36ebeb4-b1bd-41f9-8d28-b7368e7b8643",
+        "username": "orangepeacock511",
+        "password": "bungle",
+        "salt": "fQ1g0LIY",
+        "md5": "53164efa5365a4017a0535a54bf41e01",
+        "sha1": "8913e09c1b127d09b186000f6ca2954f47ed0374",
+        "sha256": "3e4761a4ff2375cf2d569543728718f9ea62ab7328a7a22636bcc7ae4d3ea30c"
+      },
+      "dob": {
+        "date": "1957-12-13T18:14:23.830Z",
+        "age": 63
+      },
+      "registered": {
+        "date": "2009-01-12T16:25:22.292Z",
+        "age": 11
+      },
+      "phone": "994-753-212",
+      "cell": "667-083-982",
+      "id": {
+        "name": "DNI",
+        "value": "82173886-B"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/51.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/51.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/51.jpg"
+      },
+      "nat": "ES"
+    }
+  ],
+  "info": {
+    "seed": "users",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}

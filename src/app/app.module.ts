@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -12,9 +12,24 @@ import { UserListComponent } from './users/user-list/user-list.component';
 import { UserItemComponent } from './users/user-list/user-item/user-item.component';
 import { UserDetailsComponent } from './users/user-details/user-details.component';
 import { LoginComponent } from './sign-in/login/login.component';
-// import { ForgotPasswordComponent } from './sign-in/forgot-password/forgot-password.component';
 import { from } from 'rxjs';
 import { ForgotPasswordComponent } from './sign-in/forgot-password/forgot-password.component';
+import { AuthGuardService } from './auth-guard.service';
+import { AuthService } from './auth.service';
+
+const appRoutes: Routes = [
+  { path: '', canActivate: [AuthGuardService], component: UsersComponent },
+  {
+    path: 'users/:userId',
+    canActivate: [AuthGuardService],
+    component: UserDetailsComponent,
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+
+  // redirect to home
+  { path: '**', redirectTo: '' },
+];
 
 @NgModule({
   declarations: [
@@ -29,17 +44,12 @@ import { ForgotPasswordComponent } from './sign-in/forgot-password/forgot-passwo
     ForgotPasswordComponent,
   ],
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([
-      { path: '', component: UsersComponent },
-      { path: 'user/:userId', component: UserDetailsComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'forgot-password', component: ForgotPasswordComponent },
-    ]),
   ],
-  providers: [],
+  providers: [AuthService, AuthGuardService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

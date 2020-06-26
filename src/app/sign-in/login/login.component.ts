@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { WhitespaceValidator } from '../../whitespace.validator';
+import { AuthService } from 'src/app/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +20,10 @@ export class LoginComponent implements OnInit {
   submitted = false;
   returnUrl: string;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
@@ -52,5 +57,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       return;
     }
+
+    this.authService.login();
   }
 }
