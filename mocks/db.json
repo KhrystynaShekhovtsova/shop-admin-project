@@ -111,6 +111,62 @@
         "thumbnail": "https://randomuser.me/api/portraits/thumb/women/51.jpg"
       },
       "nat": "ES"
+    },
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Stephen",
+        "last": "Thomas"
+      },
+      "location": {
+        "street": {
+          "number": 1418,
+          "name": "Cherry St"
+        },
+        "city": "Maitland",
+        "state": "Northern Territory",
+        "country": "Australia",
+        "postcode": 4527,
+        "coordinates": {
+          "latitude": "-83.9981",
+          "longitude": "-166.8516"
+        },
+        "timezone": {
+          "offset": "+8:00",
+          "description": "Beijing, Perth, Singapore, Hong Kong"
+        }
+      },
+      "email": "stephen.thomas@example.com",
+      "login": {
+        "uuid": "eed2185e-38e8-470e-a9a0-85520e93cf26",
+        "username": "purplebear585",
+        "password": "met2002",
+        "salt": "pH5IDa3i",
+        "md5": "c888a634b12c44bf6c0fe91075b97032",
+        "sha1": "69293846476d7bbf39f87ee28d1366de4caf7e8c",
+        "sha256": "fa6a8875ed3ac73207a2715d3b80f87f523912fce6d0234a7179f6ccfa430fcd"
+      },
+      "dob": {
+        "date": "1962-06-29T04:44:08.033Z",
+        "age": 58
+      },
+      "registered": {
+        "date": "2008-03-19T06:55:55.551Z",
+        "age": 12
+      },
+      "phone": "00-8517-9143",
+      "cell": "0414-399-853",
+      "id": {
+        "name": "TFN",
+        "value": "708315197"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/18.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/18.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/18.jpg"
+      },
+      "nat": "AU"
     }
   ],
   "login": {

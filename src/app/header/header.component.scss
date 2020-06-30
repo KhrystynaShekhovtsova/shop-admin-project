@@ -7,7 +7,12 @@
 
 .dropdown {
   transition: all 0.5s;
+  top: 50%;
+  display: inline-block;
+
   .dropdown-menu {
+    top: 50%;
+
     &.animated {
       animation-duration: 0.5s;
       -webkit-animation-duration: 0.5s;
@@ -16,6 +21,7 @@
     }
     a {
       color: $dark;
+      cursor: pointer;
     }
   }
   &:hover {

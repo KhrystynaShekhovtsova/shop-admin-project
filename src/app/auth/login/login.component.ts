@@ -86,6 +86,5 @@ export class LoginComponent implements OnInit {
         this.loading = false;
       }
     );
-    form.reset();
   }
 }

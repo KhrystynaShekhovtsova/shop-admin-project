@@ -6,6 +6,11 @@ import { AdminUser } from './admin-user.model';
 import { Router } from '@angular/router';
 import { User } from './users/user.model';
 
+const PREDEFINED_ADMIN = {
+  login: 'admin',
+  password: 'hAppytr33',
+};
+
 @Injectable({ providedIn: 'root' })
 export class AuthService {
   loggedIn = false;
@@ -15,17 +20,18 @@ export class AuthService {
 
   isAuthentificated() {
     const promise = new Promise((resolve, reject) => {
-      resolve(this.loggedIn);
+      setTimeout(() => {
+        resolve(this.loggedIn);
+      }, 600);
     });
     return promise;
   }
 
-  get currentUserValue(): AdminUser {
-    return; //this.currentUserSubject.value;
-  }
-
   login(login: string, password: string) {
-    if (login !== 'admin' || password !== 'hAppytr33') {
+    if (
+      login !== PREDEFINED_ADMIN.login ||
+      password !== PREDEFINED_ADMIN.password
+    ) {
       return throwError('Please enter correct login and password');
     } else {
       return this.http.get<AdminUser>('http://localhost:3000/login').pipe(
