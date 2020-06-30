@@ -1,7 +1,7 @@
 <div class="col-md-8 container-centered">
   <h2>Login</h2>
   <hr />
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
     <div class="form-group">
       <label for="username">Login</label>
       <input
@@ -57,4 +57,7 @@
       </button>
     </div>
   </form>
+  <div class="alert alert-danger" *ngIf="error">
+    <p class="mb-0">{{ error }}</p>
+  </div>
 </div>

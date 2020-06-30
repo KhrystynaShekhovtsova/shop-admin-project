@@ -5,6 +5,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-forgot-password',
@@ -13,9 +14,9 @@ import {
 })
 export class ForgotPasswordComponent implements OnInit {
   forgotPasswordForm: FormGroup;
-  loading = false;
-  submitted = false;
-  returnUrl: string;
+  loading: boolean = false;
+  submitted: boolean = false;
+  success: boolean = false;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -34,5 +35,6 @@ export class ForgotPasswordComponent implements OnInit {
     if (this.forgotPasswordForm.invalid) {
       return;
     }
+    this.success = true;
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { User } from '../user.model';
+import { UsersDataService } from '../users-data.service';
 
 @Component({
   selector: 'app-user-list',
@@ -9,25 +10,30 @@ import { User } from '../user.model';
 export class UserListComponent implements OnInit {
   @Output() showUserDetails = new EventEmitter<User>();
 
-  users: User[] = [
-    {
-      login: 'user123',
-      name: 'Ms Valerie Chavez',
-      imageUrl: 'https://randomuser.me/api/portraits/women/68.jpg',
-      uuid: 'f2cda612-4ac7-43db-b938-eb33b191a952',
-      registered: new Date('2005-11-15T23:22:42.041Z'),
-    },
-    {
-      login: 'user1234',
-      name: 'Ms Jamie',
-      imageUrl: 'https://randomuser.me/api/portraits/women/68.jpg',
-      uuid: 'f2cda612-4ac7-43db-b938-eb33b191a952',
-      registered: new Date('2005-11-15T23:22:42.041Z'),
-    },
-  ];
-  constructor() {}
+  users: User[] = null;
+  constructor(private usersDataService: UsersDataService) {}
 
-  ngOnInit(): void {}
+  getUsersList() {
+    this.usersDataService.getUsers().subscribe((data: any[]) => {
+      console.log(data);
+      this.users = data.map((item) => {
+        return {
+          login: item.login.username,
+          name: `${item.name.title} ${item.name.first} ${item.name.last}`,
+          imageUrl: item.picture.large,
+          uuid: item.login.uuid,
+          registered: new Date(item.registered.date),
+          phone: item.phone,
+          email: item.email,
+          location: `${item.location.city}, ${item.location.state}, ${item.location.contry}`,
+        };
+      });
+    });
+  }
+
+  ngOnInit(): void {
+    this.getUsersList();
+  }
 
   onShowUserDetails(user: User): void {
     this.showUserDetails.emit(user);

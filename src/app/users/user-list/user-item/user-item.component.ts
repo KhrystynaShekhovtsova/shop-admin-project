@@ -7,7 +7,7 @@ import { User } from '../../user.model';
   styleUrls: ['./user-item.component.scss'],
 })
 export class UserItemComponent implements OnInit {
-  @Input() user: User;
+  @Input() user: any;
   @Output() showDetails = new EventEmitter<void>();
 
   constructor() {}

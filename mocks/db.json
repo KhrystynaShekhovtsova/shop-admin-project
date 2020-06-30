@@ -1,5 +1,5 @@
 {
-  "results": [
+  "users": [
     {
       "gender": "female",
       "name": {
@@ -113,10 +113,9 @@
       "nat": "ES"
     }
   ],
-  "info": {
-    "seed": "users",
-    "results": 1,
-    "page": 1,
-    "version": "1.3"
+  "login": {
+    "name": "admin",
+    "imageUrl": "/assets/images/user_photo.png",
+    "token": "hIZ7nMDL5r"
   }
 }

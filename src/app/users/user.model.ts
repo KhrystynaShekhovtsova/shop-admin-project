@@ -7,9 +7,7 @@ export class User {
 
   //additional
   public registered: Date;
-  // public phone: string;
-  // public email: string;
-  // public location: string;
-
-  constructor() {}
+  public phone: string;
+  public email: string;
+  public location: string;
 }
