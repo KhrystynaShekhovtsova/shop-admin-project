@@ -1,3 +1,8 @@
+const PREDEFINED_ADMIN = {
+  login: 'admin',
+  password: 'hAppytr33',
+};
+
 import { HttpClient } from '@angular/common/http';
 import { from, throwError, BehaviorSubject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
@@ -5,11 +10,6 @@ import { Injectable } from '@angular/core';
 import { AdminUser } from './admin-user.model';
 import { Router } from '@angular/router';
 import { User } from '../users/user.model';
-
-const PREDEFINED_ADMIN = {
-  login: 'admin',
-  password: 'hAppytr33',
-};
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -34,6 +34,11 @@ export class AuthService {
     ) {
       return throwError('Please enter correct login and password');
     } else {
+      /* !! here will be used "get" method due to "json-server" specific. 
+         In order to create correct login request had to be used in addition "json-auth-server", 
+         but it's API requires email and password for login/signup
+      */
+
       return this.http.get<AdminUser>('http://localhost:3000/login').pipe(
         catchError((errorResp) => {
           let errorMessage = 'Something went wrong';
