@@ -14,11 +14,10 @@ To run the app follow the next steps:
    ```
    json-server --watch mocks/db.json
    ```
-5. install [json-server-auth]([https://www.npmjs.com/package/json-server-auth]
-6. run app with command
+5. run app with command
    ```
    ng serve --open
    ```
-7. login and password:
+6. login and password:
    > admin
    > hAppytr33
