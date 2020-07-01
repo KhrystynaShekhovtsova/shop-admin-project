@@ -1,5 +1,6 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../../user.model';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-user-item',
@@ -7,15 +8,15 @@ import { User } from '../../user.model';
   styleUrls: ['./user-item.component.scss'],
 })
 export class UserItemComponent implements OnInit {
-  @Input() user: any;
-  @Output() showDetails = new EventEmitter<void>();
+  @Input() user: User;
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
 
-  onShowDetails(): void {
-    console.log('clicked!');
-    this.showDetails.emit();
+  onShowDetails(uuid: string): void {
+    this.router.navigate(['/users/user-details'], {
+      queryParams: { uuid: uuid },
+    });
   }
 }

@@ -6,7 +6,7 @@ import {
   Validators,
 } from '@angular/forms';
 import { WhitespaceValidator } from '../../whitespace.validator';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from '../auth.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { from } from 'rxjs';

@@ -1,4 +1,9 @@
-<div class="card mb-3">
+<h1>User details</h1>
+<hr />
+<button class="btn btn-link pl-0 light" [routerLink]="['/users']">
+  &#60;&#60; Back to Users
+</button>
+<div class="card mb-3" *ngIf="user">
   <div class="row">
     <div class="col-sm-3">
       <img
@@ -8,15 +13,22 @@
       />
     </div>
     <div class="col-sm-9">
-      <div class="card-body">
-        <p class="card-title"><strong>Name: </strong>{{ user.name }}</p>
-        <p class="card-text">
-          <strong>Login: </strong>
-          {{ user.login }}
-        </p>
-        <button type="button" class="btn btn-link pl-0">
-          Back
-        </button>
+      <div class="card-body row">
+        <div class="col-sm-6">
+          <p class="card-title"><strong>Name: </strong>{{ user.name }}</p>
+          <p class="card-text"><strong>Login: </strong>{{ user.login }}</p>
+          <p class="card-text">
+            <strong>Register date: </strong
+            >{{ user.registered | date: "mediumDate" }}
+          </p>
+        </div>
+        <div class="col-sm-6">
+          <p class="card-text">
+            <strong>Phone number: </strong>{{ user.phone }}
+          </p>
+          <p class="card-text"><strong>Email: </strong>{{ user.email }}</p>
+          <p class="card-text"><strong>Address: </strong>{{ user.location }}</p>
+        </div>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <div class="col-md-8 container-centered">
   <h2>Login</h2>
   <hr />
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+  <form [formGroup]="loginForm" s (ngSubmit)="onSubmit(loginForm)">
     <div class="form-group">
       <label for="username">Login</label>
       <input
@@ -44,7 +44,10 @@
         </div>
       </div>
     </div>
-    <button class="btn btn-link pl-0 light" [routerLink]="['/forgot-password']">
+    <button
+      class="btn btn-link pl-0 light"
+      [routerLink]="['/login/forgot-password']"
+    >
       Forgot password?
     </button>
     <div class="form-group">

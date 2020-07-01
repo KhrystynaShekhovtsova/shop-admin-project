@@ -6,8 +6,8 @@ export class User {
   public uuid: string;
 
   //additional
-  public registered: Date;
-  public phone: string;
-  public email: string;
-  public location: string;
+  public registered?: Date;
+  public phone?: string;
+  public email?: string;
+  public location?: string;
 }

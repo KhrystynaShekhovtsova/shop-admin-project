@@ -167,6 +167,43 @@
         "thumbnail": "https://randomuser.me/api/portraits/thumb/men/18.jpg"
       },
       "nat": "AU"
+    },
+    {
+      "gender": "male",
+      "name": { "title": "Mr", "first": "Benjamin", "last": "Petersen" },
+      "location": {
+        "street": { "number": 651, "name": "Egevej" },
+        "city": "Snertinge",
+        "state": "Danmark",
+        "country": "Denmark",
+        "postcode": 28422,
+        "coordinates": { "latitude": "-34.1254", "longitude": "-163.9603" },
+        "timezone": {
+          "offset": "-1:00",
+          "description": "Azores, Cape Verde Islands"
+        }
+      },
+      "email": "benjamin.petersen@example.com",
+      "login": {
+        "uuid": "2c612c13-d19e-4996-9217-a16898a0b87a",
+        "username": "beautifulladybug678",
+        "password": "bubbas",
+        "salt": "1eM6LKAu",
+        "md5": "b363be9b282d53c82618578ea54a418a",
+        "sha1": "49986df2bb4733bb2e8fef026cbe76146f24fd94",
+        "sha256": "6e698dc2e4f59988cd3c7e102c455d2b9c63e2bde8180aac8493961156029fc3"
+      },
+      "dob": { "date": "1949-05-26T18:39:41.268Z", "age": 71 },
+      "registered": { "date": "2009-06-28T08:38:04.267Z", "age": 11 },
+      "phone": "55607546",
+      "cell": "72166671",
+      "id": { "name": "CPR", "value": "260549-8907" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/53.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/53.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/53.jpg"
+      },
+      "nat": "DK"
     }
   ],
   "login": {

@@ -4,7 +4,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
 import { AdminUser } from './admin-user.model';
 import { Router } from '@angular/router';
-import { User } from './users/user.model';
+import { User } from '../users/user.model';
 
 const PREDEFINED_ADMIN = {
   login: 'admin',

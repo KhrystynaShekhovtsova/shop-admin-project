@@ -6,6 +6,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { from } from 'rxjs';
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-forgot-password',
@@ -18,7 +20,16 @@ export class ForgotPasswordComponent implements OnInit {
   submitted: boolean = false;
   success: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    // if user is already logged in
+    if (this.authService.isAuthentificated) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit(): void {
     this.forgotPasswordForm = this.formBuilder.group({

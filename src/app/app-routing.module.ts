@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
-import { AuthGuardService } from './auth-guard.service';
-import { UsersComponent } from './users/users.component';
-import { UserDetailsComponent } from './users/user-details/user-details.component';
-import { LoginComponent } from './auth/login/login.component';
-import { AuthService } from './auth.service';
 
 const routes: Routes = [
   {
@@ -15,20 +9,25 @@ const routes: Routes = [
   },
   {
     path: 'users',
-    component: UsersComponent,
-    canActivate: [AuthGuardService],
-    children: [
-      {
-        path: ':name',
-        component: UserDetailsComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./users/users.module').then((m) => m.UsersModule),
   },
-  { path: 'login', component: LoginComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent },
+  {
+    path: 'users/user-details',
+    loadChildren: () =>
+      import('./users/users.module').then((m) => m.UsersModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'login/forgot-password',
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+  },
 
   // redirect to home
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: '/users' },
 ];
 
 @NgModule({

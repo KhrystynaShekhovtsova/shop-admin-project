@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { AdminUser } from '../admin-user.model';
-import { AuthService } from '../auth.service';
+import { AdminUser } from '../auth/admin-user.model';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.authService.user.subscribe((user) => {
       this.loggedUser = user;
-      console.log('LOGGED USER', user);
     });
   }
 
