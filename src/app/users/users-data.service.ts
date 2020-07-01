@@ -6,9 +6,7 @@ import { from, Observable } from 'rxjs';
 export class UsersDataService {
   constructor(private http: HttpClient) {}
 
-  getUsers(userId?: string): Observable<any> {
-    return this.http.get('http://localhost:3000/users', {
-      params: { uuid: userId },
-    });
+  getUsers(): Observable<any> {
+    return this.http.get('http://localhost:3000/users');
   }
 }
